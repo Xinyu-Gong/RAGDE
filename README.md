@@ -4,9 +4,6 @@
 
 This repository contains the official implementation of **RAGDE-Net**, a coarse-to-fine multimodal remote sensing image registration framework that decouples radiometric variation from geometric misalignment.
 
-> **Xinyu Gong**, Faling Chen, Yunpeng Liu, Zelin Shi
-> *IEEE Transactions on Geoscience and Remote Sensing (Under Review)*
-
 ## Overview
 
 Multimodal remote sensing image registration is fundamentally hindered by the coupling of radiometric differences and geometric misalignment. RAGDE-Net addresses this with three coordinated components:
