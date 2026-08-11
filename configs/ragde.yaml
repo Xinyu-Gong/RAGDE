@@ -1,0 +1,73 @@
+seed: 42
+device: auto
+output_dir: outputs
+
+data:
+  train_root: data/TRSR/visible_sar/train
+  val_root: data/TRSR/visible_sar/test
+  fixed_dir: visible
+  moving_dir: sar
+  image_size: [256, 256]
+  strict_pairs: true
+
+loader:
+  batch_size: 8
+  num_workers: 4
+  pin_memory: true
+
+geometry:
+  rotation: 30.0
+  translation: 0.20
+  scaling: 0.15
+  shear: 0.05
+  flow_sigma: 4.0
+  flow_alpha: 8.0
+
+mtg:
+  epochs: 200
+  learning_rate: 0.0001
+  beta1: 0.5
+  beta2: 0.999
+  generator_channels: 64
+  discriminator_channels: 64
+  residual_blocks: 9
+  lambda_cycle: 10.0
+  lambda_mmind: 2.5
+  mmind_scales: [1, 2, 4]
+  mmind_weights: [1.0, 1.0, 1.0]
+  image_pool_size: 50
+  checkpoint: outputs/mtg/best.pt
+
+gde:
+  epochs: 200
+  learning_rate: 0.0001
+  channels: 64
+  residual_blocks: 9
+  tau: 10.0
+  include_local_perturbation: true
+  checkpoint: outputs/gde/best.pt
+
+registration:
+  epochs: 200
+  learning_rate: 0.0001
+  beta1: 0.9
+  beta2: 0.999
+  guidance_scale: 2.0
+  deformable_channels: 8
+  max_flow: 16.0
+  transition_epoch: 80
+  affine_loss_floor: 0.1
+  alpha_param: 10.0
+  alpha_gde: 5.0
+  alpha_symmetry: 0.5
+  beta_flow: 10.0
+  beta_gde: 5.0
+  beta_symmetry: 0.5
+  beta_smoothness: 1.0
+  checkpoint: outputs/registration/best.pt
+
+runtime:
+  save_every: 10
+  validate_every: 10
+  max_train_batches: 0
+  max_val_batches: 0

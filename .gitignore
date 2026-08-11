@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+
+# Local data, checkpoints, and experiment products
+/data/
+/datasets/
+/outputs/
+/result/
+/checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.npy
+*.npz
+*.xlsx
+
+# Local reference implementations and manuscript sources
+ADRNet-main/
+MMRNet-main/
+SynMSE-main/
+Paper/
+README_RAGDE.md
+test_image/
+
+# Local-only research and visualization utilities
+scripts/failure_cases_viz.py
+scripts/gde_make_paper_figures.py
+scripts/gde_output_viz.py
+scripts/gde_response_analysis.py
+scripts/gde_visual_evidence.py
+scripts/local_patch_zoom.py
+scripts/make_mtg_figure.py
+scripts/mtg_ablation_134.py
+scripts/mtg_ablation_ir_115.py
+scripts/mtg_inference_one.py
+scripts/mtg_progress_composite.py
+scripts/mtg_progress_error.py
+scripts/random_registration_test.py
+scripts/registration_alignment_viz.py
+scripts/registration_error_maps.py
+scripts/stop_rgb_ir_registration_at_100.sh
+scripts/train_gde_balanced.py
+scripts/train_mrsr_rgb_ir.sh
+scripts/train_mrsr_rgb_sar.sh
+scripts/train_mrsr_rgb_sar_registration.sh
+scripts/train_os_rgb_sar.sh

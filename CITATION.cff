@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use RAGDE-Net, please cite the accompanying paper."
+title: "RAGDE-Net: Official PyTorch Implementation"
+type: software
+authors:
+  - family-names: Gong
+    given-names: Xinyu
+    email: gongxinyu@sia.cn
+  - family-names: Chen
+    given-names: Faling
+  - family-names: Liu
+    given-names: Yunpeng
+  - family-names: Shi
+    given-names: Zelin
+repository-code: "https://github.com/Xinyu-Gong/RAGDE"
+license: MIT
+version: 0.1.0
+date-released: 2026-08-11
+preferred-citation:
+  type: article
+  title: "Multimodal Remote Sensing Image Registration via Radiometric-Agnostic Geometric Discrepancy Estimation"
+  authors:
+    - family-names: Gong
+      given-names: Xinyu
+    - family-names: Chen
+      given-names: Faling
+    - family-names: Liu
+      given-names: Yunpeng
+    - family-names: Shi
+      given-names: Zelin
+  year: 2026

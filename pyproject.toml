@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragde-net"
+version = "0.1.0"
+description = "Official PyTorch implementation of RAGDE-Net for multimodal remote sensing image registration"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Xinyu Gong", email = "gongxinyu@sia.cn"},
+]
+keywords = ["image registration", "remote sensing", "multimodal learning", "pytorch"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "numpy>=1.23",
+  "Pillow>=9.0",
+  "PyYAML>=6.0",
+  "torch>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4",
+  "ruff>=0.6",
+]
+
+[project.scripts]
+ragde = "ragde.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Xinyu-Gong/RAGDE"
+Issues = "https://github.com/Xinyu-Gong/RAGDE/issues"
+
+[tool.setuptools.packages.find]
+include = ["ragde*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
